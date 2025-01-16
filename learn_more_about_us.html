@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More About Us - DEEP WATER HOLDING</title>
+    <style>
+        /* إعدادات الصفحة العامة */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle, #0A1931, #185ADB);
+            color: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        /* رأس الصفحة */
+        .header {
+            text-align: center;
+            padding: 160px 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('h9.jpg') no-repeat center center/cover;
+            color: white;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .header img {
+            img {
+    width: 100%; /* عرض الصورة حسب الحاجة */
+    height: auto; /* الحفاظ على نسبة الأبعاد */
+    border-radius: 0; /* إزالة الشكل الدائري لجعل الصورة مربعة */
+    object-fit: cover; /* لضمان احتواء الصورة داخل المساحة */
+}
+
+        }
+
+        .header img:hover {
+            transform: scale(1.1);
+        }
+
+        .header img.left {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%) rotate(0deg);
+            animation: rotateLeft 5s linear infinite;
+        }
+
+        .header img.right {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%) rotate(0deg);
+            animation: rotateRight 5s linear infinite;
+        }
+
+        .header img.center {
+            width: 350px;
+            height: 350px;
+        }
+
+        @keyframes rotateLeft {
+            0% {
+                transform: translateY(-50%) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-50%) rotate(-360deg);
+            }
+        }
+
+        @keyframes rotateRight {
+            0% {
+                transform: translateY(-50%) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-50%) rotate(360deg);
+            }
+        }
+
+        .header h1 {
+            font-size: 4em;
+            color: #FFD700;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0px 5px 20px rgba(255, 215, 0, 0.8);
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* قسم الشركات */
+        .companies {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+
+        .company {
+            background-color: rgba(10, 25, 49, 0.9);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            width: 300px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .company:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.9);
+        }
+
+        .company img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            border: 3px solid #FFD700;
+            animation: moveUpDown 3s ease-in-out infinite;
+        }
+
+        @keyframes moveUpDown {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .company h3 {
+            font-size: 1.5em;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+        .company h2 {
+            font-size: 0.9em;
+            color: #ffd900b9;
+            margin-bottom: 10px;
+        }
+        
+
+        .company a {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-size: 1em;
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #1E5F74;
+            padding: 10px 15px;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .company a:hover {
+            background-color: #FFD700;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <!-- رأس الصفحة -->
+    <div class="header">
+        <img src="h10.jpg" alt="Logo" class="left">
+        <img src="deep water 2024.png" alt="Logo" class="center">
+        <img src="h10.jpg" alt="Logo" class="right">
+        <h1>Learn More About Us</h1>
+    </div>
+
+    <!-- الشركات -->
+    <div class="companies">
+        <div class="company">
+            <img src="h6.png" alt="Deep Water Marine Logistics">
+            <h3>Deep Water Marine Logistics</h3>
+            <a href="http://www.dwml.io" target="_blank">Visit Website</a>
+            <h2>Providing bespoke offshore support and logistics solutions for the dynamic demands of the oil and gas industry.</h2>
+            
+                
+                <hr>
+           
+        </div>
+       
+        <div class="company">
+            <img src="h1.png" alt="Combilift">
+            <h3>Combilift</h3>
+            <a href="https://www.combi-lift.net/team.html" target="_blank">Visit Website</a>
+            
+                
+                <h2> Redefining heavy lift and project logistics with precision-engineered solutions for complex global operations.</h2>
+                <hr>
+            
+        </div>
+        
+        <div class="company">
+            <img src="h2.png" alt="Sager">
+            <h3>Sager</h3>
+            <a href="https://sagerdrone.com/about-us" target="_blank">Visit Website</a>
+            
+                
+                <h2> Pioneering drone-data technologies in the MENA region, empowering industries with cutting-edge aerial solutions and training.</h2>
+                <hr>
+            
+        </div>
+        <div class="company">
+            <img src="h5.png" alt="Liberte">
+            <h3>Liberte</h3>
+            <a href="https://mainnet.projectliberte.io/" target="_blank">Visit Website</a>
+            
+                
+                <h2>Advancing the future of Web3 and AI with a secure digital ecosystem for NFTs and innovative investment platforms.</h2>
+                <hr>
+            
+        </div>
+        <div class="company">
+            <img src="h4.png" alt="Bionix">
+            <h3>Bionix</h3>
+            <a href="https://www.bionixme.io/" target="_blank">Visit Website</a>
+                
+                <h2>Revolutionizing healthcare in the Middle East and Africa through essential medicines, orphan drugs, and advanced pharmaceutical solutions.</h2>
+                <hr>
+            
+        </div>
+        <div class="company">
+            <img src="h3.png" alt="ABI">
+            <h3>ABI</h3>
+            <a href="" target="_blank">Visit Website</a>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

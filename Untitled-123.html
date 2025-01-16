@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEEP WATER HOLDING</title>
+    <style>
+        /* إعدادات الصفحة العامة */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle, #0A1931, #185ADB);
+            color: #FFFFFF;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        main {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* تأثيرات الجسيمات المتحركة */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
+            border-radius: 50%;
+            animation: moveParticles 20s linear infinite;
+        }
+
+        @keyframes moveParticles {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translate(50vw, -50vh) scale(0.6);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translate(-50vw, -100vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* الصور المتحركة */
+        @keyframes rotateImages {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .moving-image {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            animation: rotateImages 10s infinite linear;
+            border-radius: 50%;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s, box-shadow 0.3s;
+            object-fit: cover;
+        }
+
+        .moving-image:hover {
+            transform: scale(1.5) rotate(360deg);
+            box-shadow: 0px 20px 40px rgba(255, 255, 255, 0.8);
+        }
+
+        /* رأس الصفحة */
+        .header {
+            text-align: center;
+            padding: 160px 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('h9.jpg') no-repeat center center/cover;
+            color: white;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .header img {
+            width: 200px;
+            height: 200px;
+            margin: 15px;
+            object-fit: cover;
+        }
+
+        .header img.middle {
+            animation: bounceMiddle 4s infinite;
+            width: 150px;
+            height: 150px;
+        }
+
+        .header img.side {
+            animation: bounceSide 3s infinite;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+
+        @keyframes bounceMiddle {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        @keyframes bounceSide {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .header h1 {
+            font-size: 5em;
+            color: #FFD700;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0px 5px 20px rgba(255, 215, 0, 0.8);
+            animation: glow 3s infinite alternate;
+        }
+        .header h2 {
+    text-align: center;
+    padding: px;
+}
+
+.header h2 {
+    font-size: 1.4em; /* Main title font size */
+    color: #FFD700; /* Title color */
+    margin: 10px 0;
+    text-transform: uppercase;
+    text-shadow: 0px 5px 20px rgba(255, 215, 0, 0.8);
+}
+
+.header .subtitle {
+    font-size: 1.2em; /* Smaller text size */
+    color: #FFD700; /* Same color as title */
+    margin-top: 10px;
+    text-shadow: 0px 3px 10px rgba(255, 215, 0, 0.6);
+}
+
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0px 5px 20px rgba(255, 215, 0, 0.6);
+            }
+            100% {
+                text-shadow: 0px 5px 40px rgba(255, 255, 255, 1);
+            }
+        }
+
+        /* الشركات */
+        .sidebar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 30px 15px;
+            background: rgba(10, 25, 49, 0.95);
+            border-top: 5px solid #FFD700;
+        }
+
+        .sidebar h2 {
+            width: 100%;
+            text-align: center;
+            font-size: 2.5em;
+            color: #FFD700;
+            margin-bottom: 40px;
+            text-shadow: 0px 5px 10px rgba(255, 223, 0, 0.8);
+        }
+
+        .company {
+            width: 35%;
+            background: linear-gradient(to right, #1E5F74, #185ADB);
+            margin: 15px;
+            padding: 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 2s ease;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .company:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.9);
+        }
+
+        .company img {
+            width: 90px;
+            height: 90px;
+            margin-right: 15px;
+            border-radius: 50%;
+            border: 4px solid #FFD700;
+        }
+
+        .company a {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-size: 1.4em;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .company a:hover {
+            color: #FFD700;
+        }
+
+        /* روابط قسم "المزيد" */
+        .links-container {
+            text-align: center;
+            padding: 40px 15px;
+            background: linear-gradient(to right, #0A1931, #123456);
+        }
+
+        .links-container a {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 40px;
+            background: linear-gradient(to right, #FFD700, #FF8C00);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .links-container a:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(to right, #FF8C00, #FFD700);
+        }
+
+        /* معرض الصور */
+        .gallery {
+            padding: 40px;
+            background: linear-gradient(to bottom, #123456, #0A1931);
+            text-align: center;
+        }
+
+        .gallery h2 {
+            color: #FFD700;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .gallery .images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery .images img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .gallery .images img {
+    width: 200px; /* عرض الصورة */
+    height: 200px; /* ارتفاع الصورة */
+    border-radius: 50%; /* تحويل الصورة إلى دائرة */
+    object-fit: cover; /* ضمان عرض المحتوى داخل الحدود */
+    transition: transform 0.3s;
+}
+
+.gallery .images img:hover {
+    transform: scale(1.1); /* تأثير عند التمرير على الصورة */
+}
+
+        .gallery .images img:hover {
+            transform: scale(1.1);
+        }
+
+        /* الفوتر */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(to bottom, #0A1931, #123456);
+            color: #AAAAAA;
+            font-size: 1.2em;
+            box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .footer img {
+            width: 80px;
+            opacity: 0.9;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .footer img:hover {
+            transform: scale(1.3);
+            opacity: 1;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            margin: 0 15px;
+            color: #FFD700;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <!-- تأثيرات الجسيمات المتحركة -->
+        <div class="particles">
+            <div class="particle" style="top: 80%; left: 10%;"></div>
+            <div class="particle" style="top: 50%; left: 30%;"></div>
+            <div class="particle" style="top: 20%; left: 70%;"></div>
+            <div class="particle" style="top: 90%; left: 80%;"></div>
+            <div class="particle" style="top: 10%; left: 50%;"></div>
+        </div>
+
+        <!-- رأس الصفحة -->
+        <div class="header">
+            <img src="h10.jpg" alt="Logo" class="side">
+            <img src="deep water 2024.png" alt="Logo" class="middle">
+            <img src="h10.jpg" alt="Logo" class="side">
+            <h1>Deep Water Holding</h1>
+            <h2>Driving innovation across industries with advanced healthcare, drone technologies, offshore logistics, heavy lift solutions, and Web3 ecosystems.
+            </h2>
+        </div>
+        
+
+        <!-- الشركات -->
+        <div class="sidebar">
+            <h2>Our Companies</h2>
+            <div class="company">
+                <img src="h6.png" class="moving-image" alt="Deep Water Marine Logistics">
+                <a href="http://www.dwml.io" target="_blank">DEEP WATER MARINE LOGISTICS</a>
+               
+            </div>
+         
+            <div class="company">
+                <img src="h1.png" class="moving-image" alt="Combilift">
+                <a href="https://www.combi-lift.net/team.html" target="_blank">COMBILIFT</a>
+                
+            </div>
+            
+            <div class="company">
+                <img src="h2.png" class="moving-image" alt="Sager">
+                <a href="https://sagerdrone.com/about-us" target="_blank">SAGER</a>
+             
+                
+            </div>
+
+            <div class="company">
+                <img src="h5.png" class="moving-image" alt="Liberte">
+                <a href="https://mainnet.projectliberte.io/" target="_blank">Liberte</a>
+              
+            </div>
+
+            <div class="company">
+                <img src="h4.png" class="moving-image" alt="Bionix">
+                <a href="https://www.bionixme.io/" target="_blank">Bionix</a>
+              
+            </div>
+
+            <div class="company">
+                <img src="h3.png" class="moving-image" alt="ABI ">
+                <a href="" target="_blank">A B I MILITARY SERVICES</a>
+            </div>
+           
+        </div>
+
+        <!-- روابط قسم "المزيد" -->
+        <div class="links-container">
+            <a href="learn_more_about_us.html" target="_blank">Learn More About Us</a>
+            <a href="contact-us.html" target="_blank">Contact Us</a>
+        </div>
+
+        <!-- معرض الصور -->
+        <section class="gallery">
+            <h2>Gallery</h2>
+            <div class="images">
+                <img src="L1.png" alt="Gallery Image 1">
+                <img src="C4.png" alt="Gallery Image 2">
+                <img src="S3.png" alt="Gallery Image 3">
+                <img src="h2.png" alt="Gallery Image 4">
+                <img src="d1.png" alt="Gallery Image 5">
+                <img src="z6.jpg" alt="Gallery Image 6">
+                <img src="B1.png" alt="Gallery Image 7">
+                <img src="h6.png" alt="Gallery Image 8">
+                <img src="h10.jpg" alt="Gallery Image 9">
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر -->
+    <div class="footer">
+        <p>&copy; 2025 DEEP WATER HOLDING. All Rights Reserved.</p>
+        <img src="h13.png" alt="Logo">
+        
+    </div>
+</body>
+</html>
+

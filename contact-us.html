@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - DEEP WATER HOLDING</title>
+    <style>
+        /* إعدادات الصفحة العامة */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #002B5B, #1E3A5F);
+            color: #F0F8FF;
+            overflow-x: hidden;
+        }
+
+        /* رأس الصفحة */
+        .header {
+            text-align: center;
+            padding: 100px 50px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('h9.jpg') no-repeat center center/cover;
+            color: white;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .header img {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            object-fit: cover;
+            animation: moveUpDown 3s infinite;
+        }
+        
+
+        @keyframes moveUpDown {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .header h1 {
+            font-size: 4em;
+            color: #FFD700;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0px 5px 20px rgba(255, 215, 0, 0.8);
+            animation: blinkingText 1.5s infinite;
+        }
+
+        @keyframes blinkingText {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* محتوى الصفحة */
+        .contact-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(30, 58, 95, 0.95);
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        .contact-container h2 {
+            text-align: center;
+            color: #FFD700;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .contact-info {
+            margin-bottom: 50px;
+        }
+
+        .contact-info p {
+            font-size: 1.3em;
+            margin: 15px 0;
+        }
+
+        .contact-info a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* الصور المتحركة على الجانبين */
+        .circular-image {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            animation: moveCircular 5s linear infinite;
+        }
+
+        .circular-image.left {
+            top: 50%;
+            left: -200px;
+            transform: translate(0, -50%);
+        }
+
+        .circular-image.right {
+            top: 50%;
+            right: -200px;
+            transform: translate(0, -50%);
+        }
+
+        @keyframes moveCircular {
+            0% {
+                transform: translate(0, -50%) rotate(0deg);
+            }
+            25% {
+                transform: translate(10px, -60%) rotate(90deg);
+            }
+            50% {
+                transform: translate(0, -70%) rotate(180deg);
+            }
+            75% {
+                transform: translate(-10px, -60%) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, -50%) rotate(360deg);
+            }
+        }
+
+        /* نموذج الاتصال */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input, .contact-form textarea {
+            margin: 15px 0;
+            padding: 15px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            background-color: #004D73;
+            color: white;
+        }
+
+        .contact-form button {
+            padding: 15px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 10px;
+            background-color: #FFD700;
+            color: white;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #FF8C00;
+        }
+
+        /* الفوتر */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(to bottom, #002B5B, #1E3A5F);
+            color: #AAAAAA;
+        }
+
+        .footer img {
+            width: 80px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- رأس الصفحة -->
+    <div class="header">
+        <img src="h10.jpg" alt="Logo">
+        <img src="deep water 2024.png" alt="Logo">
+        <img src="h10.jpg" alt="Logo">
+        <h1>Contact Us</h1>
+    </div>
+
+    <!-- محتوى الاتصال -->
+    <div class="contact-container">
+        <h2>Get in Touch</h2>
+
+        <img src="m1.png" alt="Circular Image" class="circular-image left">
+        <img src="m1.png" alt="Circular Image" class="circular-image right">
+
+        <div class="contact-info">
+            <p><strong>Phone:</strong> <a href="tel:028778709">028778709</a></p>
+            <p><strong>Email:</strong> <a href="mailto:husam.rafat@dwml.io">husam.rafat@dwml.io</a></p>
+            <p><strong>Address:</strong> EREC Building # 20, Al Danah, Al Falah St. PO Box: 56169, Abu Dhabi, UAE</p>
+        </div>
+
+        <h2>Send Us a Message</h2>
+
+        <form class="contact-form" action="#" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        
+    </div>
+
+    <!-- الفوتر -->
+    <div class="footer">
+        <p>&copy; 2025 DEEP WATER HOLDING. All Rights Reserved.</p>
+        <img src="h13.png" alt="Logo">
+    </div>
+</body>
+</html>
